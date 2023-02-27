@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="zoomingcar_root_menu" name="Zooming car">
+        <menuitem id="zoomingcar_first_level_booking_menu" name="Booking">
+            <menuitem id="zoomingcar_third_level_booking_menu" name="Booking" action="zoomingcar_rent_booking_action" />
+        </menuitem>
+        <menuitem id="zoomingcar_first_level_rental_services_menu" name="Rental Services" >
+            <menuitem id="zoomingcar_third_level_car_info_menu" name="Cars info" action="zoomingcar_rent_info_action" />
+            <menuitem id="zoomingcar_third_level_car_tyoe_menu" name="Cars Types" action="zoomingcar_rent_type_action" />
+            <menuitem id="zoomingcar_third_level_car_location_menu" name="Cars Locations" action="zoomingcar_rent_location_action" />    
+        </menuitem>
+    </menuitem>
+</odoo>

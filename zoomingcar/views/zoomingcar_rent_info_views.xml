@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="zoomingcar_rent_info_action" model="ir.actions.act_window">
+        <field name="name">Rental Info</field>
+        <field name="res_model">zoomingcar.rent.info</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_similing_face">
+                create you first property
+            </p>
+        </field>
+    </record>
+    <!-- tree view -->
+    <record id="zoomingcar_rent_info_tree_view" model="ir.ui.view">
+        <field name="name">Zoomingcar Rent Info Tree View</field>
+        <field name="model">zoomingcar.rent.info</field>
+        <field name="arch" type="xml">
+            <tree string="car_rent">
+                <field name="name"/>
+                <field name="license_plate"/>
+                <field name="postcode"/>
+                <field name="location_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    <!-- form view -->
+    <record id="zoomingcar_info_form_view" model="ir.ui.view">
+        <field name="name">Zoomingcar Rent Info Form View</field>
+        <field name="model">zoomingcar.rent.info</field>
+        <field name="arch" type="xml">
+            <form string="zoomingcar_rent_info_form_view">
+                <header>
+                    <field name="state" widget="statusbar" options="{'clickable' : 1}"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="NEW" bg_color="bg-success" attrs="{'invisible' : [('state','=','booked')]}"/>
+                    <widget name="web_ribbon" title="BOOKED" bg_color="bg-danger" attrs="{'invisible' : [('state','=','new')]}"/>
+                    <field name="car_image" widget="image" class="oe_avatar"/>
+                    <div>
+                        <h1>
+                            <field name="name" placeholder="Enter Model Name"/>
+                        </h1>
+                        <h3>
+                             License Plate
+                            <field name="license_plate"/>
+                        </h3>
+                        <group>
+                            <field name="postcode"/>
+                            <field name="location_id"/>
+                        </group>
+                    </div>
+                    <group>
+                        <group>
+                            <group string="DRIVER">
+                                <field name="driver"/>
+                                <field name="driver_id" attrs="{'invisible': [('driver', '=', False)]}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="VEHICLE">
+                                <field name="deposit"/>
+                                <label for="last_odometer"/>
+                                <div name="last_odometer">
+                                    <field name="last_odometer"/>
+                                    <span>Kilometer</span>
+                                </div>
+                                <field name="chassis_number"/>
+                                <label for="purchase_value"/>
+                                <div >
+                                    <field name="purchase_value"/>
+                                    <span>₹</span>
+                                </div>
+                            </group>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Model">
+                            <group>
+                                <group string="MODEL">
+                                    <field name="type_id"/>
+                                    <field name="seats_number"/>
+                                    <field name="colour"/>
+                                    <field name="model_year"/>
+                                    <field name="transmission_type"/>
+                                </group>
+                                <group string="ENGINE">
+                                    <field name="horse_power"/>
+                                    <field name="fuel_type"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Rent Details">
+                            <group>
+                                <group string="Rent Details">
+                                    <field name="rent_per_km"/>
+                                    <field name="rent_per_hours"/>
+                                    <field name="rent_per_day"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Booking">
+                            <field name="booking_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- search view -->
+    <record id="zoomingcar_rent_info_search_view" model="ir.ui.view">
+        <field name="name">Zoomingcar Rent Info Search View</field>
+        <field name="model">zoomingcar.rent.info</field>
+        <field name="arch" type="xml">
+            <search string="info_search">
+                <field name="name"/>
+                <field name="postcode"/>
+                <field name="license_plate"/>
+                <field name="location_id"/>
+                <field name="driver_id"/>
+                <field name="state"/>
+                <field name="type_id"/>
+            </search>
+        </field>
+    </record>
+</odoo>

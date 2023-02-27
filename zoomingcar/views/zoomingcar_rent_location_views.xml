@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="zoomingcar_rent_location_action" model="ir.actions.act_window">
+        <field name="name">Rent Location</field>
+        <field name="res_model">zoomingcar.rent.location</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_similing_face">
+             create your first property
+           </p>
+        </field>
+    </record>
+    <!-- tree view -->
+    <record id="zoomingcar_location_tree_view" model="ir.ui.view">
+        <field name="name">Zoomingcar Rent Location Tree View</field>
+        <field name="model">zoomingcar.rent.location</field>
+        <field name="arch" type="xml">
+            <tree string="car_rent">
+                <field name="name"/>
+                <field name="location_ids"/>
+            </tree>
+        </field>
+    </record>
+    <!-- form view -->
+    <record id="zoomingcar_rent_location_form_view" model="ir.ui.view">
+        <field name="name">zoomingcar Rent Location Form View</field>
+        <field name="model">zoomingcar.rent.location</field>
+        <field name="arch" type="xml">
+            <form string="car_type">
+                <sheet>
+                    <h1>Locations</h1>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <notebook>
+                            inline view
+                            <page name="location" string="Locations">
+                                <field name="location_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="license_plate"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

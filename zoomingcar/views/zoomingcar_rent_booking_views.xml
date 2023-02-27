@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="zoomingcar_rent_booking_action" model="ir.actions.act_window">
+        <field name="name">Booking</field>
+        <field name="res_model">zoomingcar.rent.booking</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face"> create your first property </p>
+        </field>
+    </record>
+    <!-- tree view -->
+    <record id="zoomingcar_booking_tree_view" model="ir.ui.view">
+        <field name="name">Zoomingcar Rent Booking Tree View</field>
+        <field name="model">zoomingcar.rent.booking</field>
+        <field name="arch" type="xml">
+            <tree string="car_rent" decoration-danger="status == 'refused'" decoration-success="status == 'accepted'">
+                <field name="from_date"/>
+                <field name="to_date"/>
+                <field name="buyer_id"/>
+                <field name="rent_type"/>
+                <field name="status" invisible="1"/>
+                <button type="object" name="action_accepted" string="Accepted" icon="fa-check"/>
+                <button type="object" name="action_refused" string="Refused" icon="fa-times"/>
+            </tree>
+        </field>
+    </record>
+    <!-- form view -->
+    <record id="zoomingcar_booking_form_view" model="ir.ui.view">
+        <field name="name">zoomingcar Rent Booking Form View</field>
+        <field name="model">zoomingcar.rent.booking</field>
+        <field name="arch" type="xml">
+            <form string="car_booking">
+                <sheet>
+                    <h1>Booking</h1>
+                    <group>
+                        <group>
+                            <field name="buyer_id"/>
+                        </group>
+                        <group>
+                            <field name="rent_type"/>
+                        </group>
+                        <group>
+                            <field name="hours_days" attrs="{'invisible' : [('rent_type','=','days')]}"/>
+                            <field name="date" attrs="{'invisible' : [('rent_type','=','days')]}"/>
+                            <field name="total_rent"/>
+                        </group>
+                        <group>
+                            <field name="from_date" attrs="{'invisible' : [('rent_type','!=','days')]}"/>
+                        </group>
+                        <group>
+                            <field name="to_date" attrs="{'invisible' : [('rent_type','!=','days')]}"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

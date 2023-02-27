@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+zoomingcar.access_zoomingcar_rent_booking,access_zoomingcar_rent_booking,zoomingcar.model_zoomingcar_rent_booking,base.group_user,1,1,1,1
+zoomingcar.access_zoomingcar_rent_info,access_zoomingcar_rent_info,zoomingcar.model_zoomingcar_rent_info,base.group_user,1,1,1,1
+zoomingcar.access_zoomingcar_rent_location,access_zoomingcar_rent_location,zoomingcar.model_zoomingcar_rent_location,base.group_user,1,1,1,1
+zoomingcar.access_zoomingcar_rent_type,access_zoomingcar_rent_type,zoomingcar.model_zoomingcar_rent_type,base.group_user,1,1,1,1
