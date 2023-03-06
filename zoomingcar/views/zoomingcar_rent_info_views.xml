@@ -3,12 +3,20 @@
     <record id="zoomingcar_rent_info_action" model="ir.actions.act_window">
         <field name="name">Rental Info</field>
         <field name="res_model">zoomingcar.rent.info</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_similing_face">
                 create you first property
             </p>
         </field>
+    </record>
+    <!-- ir sequence -->
+    <record id="seq_task_order" model="ir.sequence">
+        <field name="name">Car Reference</field>
+        <field name="code">zoomingcar.rent.info</field>
+        <field name="prefix">Car</field>
+        <field name="padding">3</field>
+        <field name="company_id" eval="False"/>
     </record>
     <!-- tree view -->
     <record id="zoomingcar_rent_info_tree_view" model="ir.ui.view">
@@ -20,7 +28,9 @@
                 <field name="license_plate"/>
                 <field name="postcode"/>
                 <field name="location_id"/>
+                <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                 <field name="state"/>
+                <field name="seq_name"/>
             </tree>
         </field>
     </record>
@@ -34,20 +44,21 @@
                     <field name="state" widget="statusbar" options="{'clickable' : 1}"/>
                 </header>
                 <sheet>
-                    <widget name="web_ribbon" title="NEW" bg_color="bg-success" attrs="{'invisible' : [('state','=','booked')]}"/>
-                    <widget name="web_ribbon" title="BOOKED" bg_color="bg-danger" attrs="{'invisible' : [('state','=','new')]}"/>
+                    <!-- <widget name="web_ribbon" title="NEW" bg_color="bg-success" attrs="{'invisible' : [('state','=','booked')]}"/> -->
+                    <!-- <widget name="web_ribbon" title="BOOKED" bg_color="bg-danger" attrs="{'invisible' : [('state','=','new')]}"/> -->
                     <field name="car_image" widget="image" class="oe_avatar"/>
                     <div>
                         <h1>
-                            <field name="name" placeholder="Enter Model Name"/>
+                            <field name="name" placeholder="Enter Your Car Name"/>
                         </h1>
                         <h3>
-                             License Plate
+                            License Plate
                             <field name="license_plate"/>
                         </h3>
                         <group>
                             <field name="postcode"/>
                             <field name="location_id"/>
+                            <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                         </group>
                     </div>
                     <group>
@@ -80,7 +91,7 @@
                                 <group string="MODEL">
                                     <field name="type_id"/>
                                     <field name="seats_number"/>
-                                    <field name="colour"/>
+                                    <field name="color"/>
                                     <field name="model_year"/>
                                     <field name="transmission_type"/>
                                 </group>
@@ -104,6 +115,11 @@
                         </page>
                     </notebook>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="message_ids" />
+                    <field name="activity_ids" />
+                </div>
             </form>
         </field>
     </record>
@@ -121,6 +137,51 @@
                 <field name="state"/>
                 <field name="type_id"/>
             </search>
+        </field>
+    </record>
+    <!-- kanban view -->
+    <record id="estate_property_kanban_view" model="ir.ui.view">
+        <field name="name">Zoomingcar Rent Info kanban View</field>
+        <field name="model">zoomingcar.rent.info</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="type_id" records_draggable = "False" >
+                <field name="color"/>
+                <field name="driver"/>
+                <!-- <field name="car_image"/> -->
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <!-- <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('zoomingcar.rent.info','car_image','record.car_image.raw_value')" alt="loading"/>   
+                            </div> -->
+                            <div>
+                                <field name="favorite" widget ="boolean_favorite" nolabel="1" class="me-2"/>
+                                <strong>
+                                    <field name="name" widget="badge"/>
+                                </strong>
+                            </div>
+                            <div t-if="record.driver.raw_value">
+                                <i class="fa fa-user me-2" title="Driver Name"/>
+                                <strong>
+                                    <field name="driver_id" widget="many2one_avatar_partner"/>
+                                </strong>
+                            </div>
+                            <div>
+                                License Plate:
+                                <field name="license_plate"/>
+                            </div>
+                            <div>
+                                <field name="tag_ids" widget="many2many_tags" options ="{'color_field':'color'}"/>
+                            </div>
+                            <div class="o_kanban_record_bottom float-end">
+                                <div class="oe_kanban_bottom_right ">
+                                    <field name="kanban_state" widget="state_selection"/>
+                                </div>
+                            </div>
+                        </div>    
+                    </t>
+                </templates>
+            </kanban>
         </field>
     </record>
 </odoo>

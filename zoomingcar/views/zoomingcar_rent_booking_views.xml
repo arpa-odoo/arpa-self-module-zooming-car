@@ -40,7 +40,7 @@
                             <field name="rent_type"/>
                         </group>
                         <group>
-                            <field name="hours_days" attrs="{'invisible' : [('rent_type','=','days')]}"/>
+                            <field name="hours_km_days" attrs="{'invisible' : [('rent_type','=','days')]}"/>
                             <field name="date" attrs="{'invisible' : [('rent_type','=','days')]}"/>
                             <field name="total_rent"/>
                         </group>

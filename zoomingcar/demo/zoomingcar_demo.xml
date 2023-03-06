@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <!-- car type demo data -->
+    <record id="car_type1" model="zoomingcar.rent.type">
+        <field name="name">SUV</field>
+    </record>
+    <record id="car_type2" model="zoomingcar.rent.type">
+        <field name="name">Hatchback</field>
+    </record>
+    <record id="car_type3" model="zoomingcar.rent.type">
+        <field name="name">Sedan</field>
+    </record>
+    <record id="car_type4" model="zoomingcar.rent.type">
+        <field name="name">Sports</field>
+    </record>
+    <record id="car_type5" model="zoomingcar.rent.type">
+        <field name="name">Coupe</field>
+    </record>
+    <record id="car_type6" model="zoomingcar.rent.type">
+        <field name="name">Crossover</field>
+    </record>
+    <record id="car_type7" model="zoomingcar.rent.type">
+        <field name="name">Grand tourer</field>
+    </record>
+    <record id="car_type8" model="zoomingcar.rent.type">
+        <field name="name">Convertible</field>
+    </record>
+
+    <!-- car tags demo data -->
+    <record id="car_tag1" model="zoomingcar.rent.tag">
+        <field name="name">luxury</field>
+    </record>
+    <record id="car_tag2" model="zoomingcar.rent.tag">
+        <field name="name">sportscar</field>
+    </record>
+    <record id="car_tag3" model="zoomingcar.rent.tag">
+        <field name="name">vvip</field>
+    </record>
+    <record id="car_tag4" model="zoomingcar.rent.tag">
+        <field name="name">classic</field>
+    </record>
+    <record id="car_tag5" model="zoomingcar.rent.tag">
+        <field name="name">premium</field>
+    </record>
+
+    <!-- car location demo data -->
+    <record id="car_location1" model="zoomingcar.rent.location">
+        <field name="name">Palanpur</field>
+    </record>
+    <record id="car_location2" model="zoomingcar.rent.location">
+        <field name="name">Surat</field>
+    </record>
+    <record id="car_location3" model="zoomingcar.rent.location">
+        <field name="name">Mumbai(fountain)</field>
+    </record>
+    <record id="car_location4" model="zoomingcar.rent.location">
+        <field name="name">Ahmedabad</field>
+    </record>
+    <record id="car_location5" model="zoomingcar.rent.location">
+        <field name="name">chhapi</field>
+    </record>
+    <record id="car_location6" model="zoomingcar.rent.location">
+        <field name="name">Deesa</field>
+    </record>
+    <record id="car_location7" model="zoomingcar.rent.location">
+        <field name="name">Visnagar</field>
+    </record>
+    <record id="car_location8" model="zoomingcar.rent.location">
+        <field name="name">Mehsana</field>
+    </record>
+    <record id="car_location9" model="zoomingcar.rent.location">
+        <field name="name">kanodar</field>
+    </record>
+    <record id="car_location10" model="zoomingcar.rent.location">
+        <field name="name">udaipur</field>
+    </record>
+    <record id="car_location11" model="zoomingcar.rent.location">
+        <field name="name">Kashmir</field>
+    </record>
+    <record id="car_location12" model="zoomingcar.rent.location">
+        <field name="name">Punjab</field>
+    </record>
+    <record id="car_location13" model="zoomingcar.rent.location">
+        <field name="name">Imagica</field>
+    </record>
+
+
+    <!-- cars demo data -->
+    <record id="zoomingcar1" model="zoomingcar.rent.info">
+        <field name="name">Corolla Altis</field>
+        <field name="license_plate">GJ08CR1989</field>
+        <field name="postcode">385520</field>
+        <field name="tag_ids" eval="[ref('car_tag1'),ref('car_tag3')]" />
+        <field name="location_id" ref="car_location1"/>
+        <field name="driver">True</field>
+        <field name="driver_id" ref="base.res_partner_12"/>
+        <field name="deposit">10000</field>
+        <field name="last_odometer">12456</field>
+        <field name="chassis_number">SV30-0169266</field>
+        <field name="purchase_value">850000</field>
+        <field name="type_id" ref="car_type3"/>
+        <field name="seats_number">4</field>
+        <field name="color">Blue</field>
+        <field name="model_year">2012</field>
+        <field name="transmission_type">manual</field>
+        <field name="horse_power">6000 RPM</field>
+        <field name="fuel_type">petrol</field>
+        <field name="state">new</field>
+        <field name="favorite">True</field>
+        <field name="kanban_state">done</field>
+        <field name="rent_per_km">30.0</field>    
+        <field name="rent_per_hours">7000.0</field>    
+        <field name="rent_per_day">45000.0</field>    
+    </record>
+
+    <record id="zoomingcar2" model="zoomingcar.rent.info">
+        <field name="name">Innova</field>
+        <field name="license_plate">MH04EQ4977</field>
+        <field name="postcode">385000</field>
+        <field name="tag_ids" eval="[ref('car_tag1'),ref('car_tag4')]" />
+        <field name="location_id" ref="car_location2"/>
+        <field name="driver">True</field>
+        <field name="driver_id" ref="base.res_partner_1"/>
+        <field name="deposit">15000</field>
+        <field name="last_odometer">1200</field>
+        <field name="chassis_number">SV31-0169266</field>
+        <field name="purchase_value">1500000</field>
+        <field name="type_id" ref="car_type1"/>
+        <field name="seats_number">6</field>
+        <field name="color">Grey</field>
+        <field name="model_year">2016</field>
+        <field name="transmission_type">manual</field>
+        <field name="horse_power">8000 RPM</field>
+        <field name="fuel_type">diesel</field>
+        <field name="state">new</field>
+        <field name="favorite">True</field>
+        <field name="kanban_state">normal</field>
+        <field name="rent_per_km">40.0</field>    
+        <field name="rent_per_hours">9000.0</field>    
+        <field name="rent_per_day">55000.0</field>    
+    </record>
+
+    <record id="zoomingcar3" model="zoomingcar.rent.info">
+        <field name="name">Innova crysta</field>
+        <field name="license_plate">MH04EQ4777</field>
+        <field name="postcode">385000</field>
+        <field name="tag_ids" eval="[ref('car_tag1'),ref('car_tag5')]" />
+        <field name="location_id" ref="car_location2"/>
+        <field name="driver">True</field>
+        <field name="driver_id" ref="base.res_partner_1"/>
+        <field name="deposit">20000</field>
+        <field name="last_odometer">1000</field>
+        <field name="chassis_number">SV32-0169266</field>
+        <field name="purchase_value">2800000</field>
+        <field name="type_id" ref="car_type1"/>
+        <field name="seats_number">6</field>
+        <field name="color">white</field>
+        <field name="model_year">2023</field>
+        <field name="transmission_type">automatic</field>
+        <field name="horse_power">8500 RPM</field>
+        <field name="fuel_type">diesel</field>
+        <field name="state">new</field>
+        <field name="favorite">True</field>
+        <field name="kanban_state">done</field> 
+        <field name="rent_per_km">45.0</field>    
+        <field name="rent_per_hours">10000.0</field>    
+        <field name="rent_per_day">60000.0</field>   
+    </record>
+
+    <record id="zoomingcar4" model="zoomingcar.rent.info">
+        <field name="name">Hyundai i20</field>
+        <field name="license_plate">GJ0BRQ7777</field>
+        <field name="postcode">385001</field>
+        <field name="tag_ids" eval="[ref('car_tag3'),ref('car_tag5')]" />
+        <field name="location_id" ref="car_location3"/>
+        <field name="driver">True</field>
+        <field name="driver_id" ref="base.res_partner_1"/>
+        <field name="deposit">20000</field>
+        <field name="last_odometer">1000</field>
+        <field name="chassis_number">SV33-0169266</field>
+        <field name="purchase_value">1800000</field>
+        <field name="type_id" ref="car_type2"/>
+        <field name="seats_number">4</field>
+        <field name="color">Black</field>
+        <field name="model_year">2023</field>
+        <field name="transmission_type">automatic</field>
+        <field name="horse_power">7500 RPM</field>
+        <field name="fuel_type">diesel</field>
+        <field name="state">new</field>
+        <field name="favorite">True</field>
+        <field name="kanban_state">done</field>
+        <field name="rent_per_km">20.0</field>    
+        <field name="rent_per_hours">1000.0</field>    
+        <field name="rent_per_day">50000.0</field>    
+    </record>
+
+    <record id="zoomingcar5" model="zoomingcar.rent.info">
+        <field name="name">Porsche 911</field>
+        <field name="license_plate">GJ11AA1111</field>
+        <field name="postcode">385600</field>
+        <field name="tag_ids" eval="[ref('car_tag2'),ref('car_tag3'),ref('car_tag5')]" />
+        <field name="location_id" ref="car_location11"/>
+        <field name="driver">True</field>
+        <field name="driver_id" ref="base.res_partner_12"/>
+        <field name="deposit">200000</field>
+        <field name="last_odometer">100</field>
+        <field name="chassis_number">SV38-0169266</field>
+        <field name="purchase_value">22800000</field>
+        <field name="type_id" ref="car_type4"/>
+        <field name="seats_number">2</field>
+        <field name="color">Black</field>
+        <field name="model_year">2023</field>
+        <field name="transmission_type">automatic</field>
+        <field name="horse_power">11500 RPM</field>
+        <field name="fuel_type">diesel</field>
+        <field name="state">new</field>
+        <field name="favorite">True</field>
+        <field name="kanban_state">done</field>
+        <field name="rent_per_km">200.0</field>    
+        <field name="rent_per_hours">5000.0</field>    
+        <field name="rent_per_day">100000.0</field>    
+    </record>
+
+
+
+    <!-- booking demo data -->
+    <record id="booking1" model="zoomingcar.rent.booking">
+        <field name="info_id" ref="zoomingcar5"/>
+        <field name="buyer_id" ref="base.res_partner_12"/>
+        <field name="rent_type">kilometers</field>
+        <field name="hours_km_days">1000</field>
+    </record>
+    <record id="booking2" model="zoomingcar.rent.booking">
+        <field name="info_id" ref="zoomingcar5"/>
+        <field name="buyer_id" ref="base.res_partner_12"/>
+        <field name="rent_type">hours</field>
+        <field name="hours_km_days">45</field>
+    </record>
+    <record id="booking3" model="zoomingcar.rent.booking">
+        <field name="info_id" ref="zoomingcar4"/>
+        <field name="buyer_id" ref="base.res_partner_1"/>
+        <field name="rent_type">kilometers</field>
+        <field name="hours_km_days">480</field>
+    </record>
+    <record id="booking4" model="zoomingcar.rent.booking">
+        <field name="info_id" ref="zoomingcar4"/>   
+        <field name="buyer_id" ref="base.res_partner_2"/>
+        <field name="rent_type">days</field>
+        <field name="hours_km_days">5</field>
+    </record>
+    <record id="booking5" model="zoomingcar.rent.booking">
+        <field name="info_id" ref="zoomingcar3"/>
+        <field name="buyer_id" ref="base.res_partner_1"/>
+        <field name="rent_type">hours</field>
+        <field name="hours_km_days">5</field>
+    </record>
+</odoo>

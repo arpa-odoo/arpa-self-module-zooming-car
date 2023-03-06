@@ -3,43 +3,42 @@
     <record id="zoomingcar_rent_type_action" model="ir.actions.act_window">
         <field name="name">Rent Types</field>
         <field name="res_model">zoomingcar.rent.type</field>
-        <field name="view_mode">tree , form</field>
+        <field name="view_mode">tree,form</field>
         <field name="help" type="html">
-           <p class="o_view_nocontent_similing_face">
-             create your first property
-           </p>
+            <p class="o_view_nocontent_similing_face">
+            create your first property
+            </p>
         </field>
     </record>
-
     <!-- tree view -->
-<record id="zoomingcar_rent_type_tree_view" model="ir.ui.view">
-    <field name="name">Zoomingcar Rent Type Tree View</field>
-    <field name="model">zoomingcar.rent.type</field>
-    <field name="arch" type="xml">
-    <tree string="car_rent">
-    <field name="name"/>
-    <field name="description"/>
-    </tree>
-    </field>
+    <record id="zoomingcar_rent_type_tree_view" model="ir.ui.view">
+        <field name="name">Zoomingcar Rent Type Tree View</field>
+        <field name="model">zoomingcar.rent.type</field>
+        <field name="arch" type="xml">
+            <tree string="zoomingcar_rent">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
     </record>
     <!-- form view -->
     <record id="zoomingcar_rent_type_form_view" model="ir.ui.view">
-    <field name="name">Zoomingcar Rent Type Form View</field>
-    <field name="model">zoomingcar.rent.type</field>
-    <field name="arch" type="xml">
-    <form string="car_type">
-    <sheet>
-    <h1>Types</h1>
-    <group>
-    <group>
-    <field name="name"/>
-    </group>
-    <group>
-    <field name="description"/>
-    </group>
-    </group>
-    </sheet>
-    </form>
-    </field>
+        <field name="name">Zoomingcar Rent Type Form View</field>
+        <field name="model">zoomingcar.rent.type</field>
+        <field name="arch" type="xml">
+            <form string="zoomingcar_type">
+                <sheet>
+                    <h1>Types</h1>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
     </record>
 </odoo>
