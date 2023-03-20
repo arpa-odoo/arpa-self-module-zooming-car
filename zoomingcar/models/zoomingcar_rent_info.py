@@ -15,7 +15,7 @@ class ZoomingcarRentInfo(models.Model):
     tag_ids=fields.Many2many('zoomingcar.rent.tag',string="Tags",relation="zoomingcar_rent_tag_rel")
     # states=fields.Selection(selection=[('available','Available'),('booked','Booked')], default='available',tracking=True)
     driver=fields.Boolean(string='Driver')
-    driver_id=fields.Many2one('res.partner','Driver Name')
+    driver_id=fields.Many2one('res.users','Driver Name')
     deposit=fields.Integer(string="Deposit",tracking=True)
     last_odometer=fields.Float('Last Odometer', required=True)
     chassis_number=fields.Char(string='Chassis Number')
@@ -53,4 +53,4 @@ class ZoomingcarRentInfo(models.Model):
 
     _sql_constraints=[
         ('check_deposit','CHECK(deposit>=0)', "Deposit must be Postive")
-    ]
+    ]   

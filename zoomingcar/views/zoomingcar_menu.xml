@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <menuitem id="zoomingcar_root_menu" name="Zooming car">
+    <menuitem id="zoomingcar_root_menu" name="Zooming car" web_icon="zoomingcar,icons.png">
         <menuitem id="zoomingcar_first_level_booking_menu" name="Booking">
             <menuitem id="zoomingcar_third_level_booking_menu" name="Booking" action="zoomingcar_rent_booking_action" />
         </menuitem>

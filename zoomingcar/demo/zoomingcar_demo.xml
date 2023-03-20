@@ -95,7 +95,7 @@
         <field name="tag_ids" eval="[ref('car_tag1'),ref('car_tag3')]" />
         <field name="location_id" ref="car_location1"/>
         <field name="driver">True</field>
-        <field name="driver_id" ref="base.res_partner_12"/>
+        <!-- <field name="driver_id" ref="base.res_users_1"/> -->
         <field name="deposit">10000</field>
         <field name="last_odometer">12456</field>
         <field name="chassis_number">SV30-0169266</field>
@@ -122,7 +122,7 @@
         <field name="tag_ids" eval="[ref('car_tag1'),ref('car_tag4')]" />
         <field name="location_id" ref="car_location2"/>
         <field name="driver">True</field>
-        <field name="driver_id" ref="base.res_partner_1"/>
+        <!-- <field name="driver_id" ref="base.res_users_1"/> -->
         <field name="deposit">15000</field>
         <field name="last_odometer">1200</field>
         <field name="chassis_number">SV31-0169266</field>
@@ -149,7 +149,7 @@
         <field name="tag_ids" eval="[ref('car_tag1'),ref('car_tag5')]" />
         <field name="location_id" ref="car_location2"/>
         <field name="driver">True</field>
-        <field name="driver_id" ref="base.res_partner_1"/>
+        <!-- <field name="driver_id" ref="base.res_users_1"/> -->
         <field name="deposit">20000</field>
         <field name="last_odometer">1000</field>
         <field name="chassis_number">SV32-0169266</field>
@@ -176,7 +176,7 @@
         <field name="tag_ids" eval="[ref('car_tag3'),ref('car_tag5')]" />
         <field name="location_id" ref="car_location3"/>
         <field name="driver">True</field>
-        <field name="driver_id" ref="base.res_partner_1"/>
+        <!-- <field name="driver_id" ref="base.res_users_1"/> -->
         <field name="deposit">20000</field>
         <field name="last_odometer">1000</field>
         <field name="chassis_number">SV33-0169266</field>
@@ -203,7 +203,7 @@
         <field name="tag_ids" eval="[ref('car_tag2'),ref('car_tag3'),ref('car_tag5')]" />
         <field name="location_id" ref="car_location11"/>
         <field name="driver">True</field>
-        <field name="driver_id" ref="base.res_partner_12"/>
+        <!-- <field name="driver_id" ref="base.res_users_admin"/> -->
         <field name="deposit">200000</field>
         <field name="last_odometer">100</field>
         <field name="chassis_number">SV38-0169266</field>

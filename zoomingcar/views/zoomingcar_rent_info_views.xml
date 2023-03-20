@@ -24,6 +24,10 @@
         <field name="model">zoomingcar.rent.info</field>
         <field name="arch" type="xml">
             <tree string="car_rent">
+                <header>
+                    <!-- wizard action button -->
+                    <button type="action" name="%(zoomingcar.add_booking_action)d" string="Add Bookings" />
+                </header>
                 <field name="name"/>
                 <field name="license_plate"/>
                 <field name="postcode"/>
@@ -44,8 +48,8 @@
                     <field name="state" widget="statusbar" options="{'clickable' : 1}"/>
                 </header>
                 <sheet>
-                    <!-- <widget name="web_ribbon" title="NEW" bg_color="bg-success" attrs="{'invisible' : [('state','=','booked')]}"/> -->
-                    <!-- <widget name="web_ribbon" title="BOOKED" bg_color="bg-danger" attrs="{'invisible' : [('state','=','new')]}"/> -->
+                    <widget name="web_ribbon" title="NEW" bg_color="bg-success" attrs="{'invisible' : [('state','=','booked')]}"/>
+                    <widget name="web_ribbon" title="BOOKED" bg_color="bg-danger" attrs="{'invisible' : [('state','=','new')]}"/>
                     <field name="car_image" widget="image" class="oe_avatar"/>
                     <div>
                         <h1>
@@ -163,7 +167,7 @@
                             <div t-if="record.driver.raw_value">
                                 <i class="fa fa-user me-2" title="Driver Name"/>
                                 <strong>
-                                    <field name="driver_id" widget="many2one_avatar_partner"/>
+                                    <field name="driver_id" widget="many2one_avatar_users"/>
                                 </strong>
                             </div>
                             <div>
